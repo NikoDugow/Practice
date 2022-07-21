@@ -4,20 +4,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-      steps:
-      - name: Checkout 
-      uses: actions/checkout@v1
-      - name: Setup Python # Установка python окружения для выполнения задания
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup Python 
       uses: actions/setup-python@v4.0.0
       with:
-      cache: pip
-      python-version: '3.7'
-      - name: Install Dependencies # Установка зависимостей для Jupyter
+        python-version: '3.7'
+    - name: Install Dependencies # Установка зависимостей для Jupyter
       run: pip install -r environment.yml
-      - name: Exeute Notebook # Выполнение тетрадки Jupyter
+    - name: Exeute Notebook # Выполнение тетрадки Jupyter
       run: jupyter-nbconvert --execute DZ1.ipynb --to html
-      - name: Upload a Build Artifact # Выгрузка вывода тетрадки (артефакта задания) в html файл
+    - name: Upload a Build Artifact # Выгрузка вывода тетрадки (артефакта задания) в html файл
       uses: actions/upload-artifact@v3.1.0
       with:
-      name: Artifact
-      path: DZ1.html
+        name: Artifact
+        path: DZ1.html
