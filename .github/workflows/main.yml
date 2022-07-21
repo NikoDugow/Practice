@@ -4,7 +4,8 @@ name: Jupyter
 
 # Controls when the workflow will run
 on:
-  workflow_dispatch:
+  push:
+    branches: [master]
 jobs:
     runs-on: ubuntu-latest
     steps:
