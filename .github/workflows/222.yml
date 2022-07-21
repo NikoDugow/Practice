@@ -11,7 +11,7 @@ jobs:
       with:
         python-version: '3.7'
     - name: Install Dependencies # Установка зависимостей для Jupyter
-      run: pip install -r environment.yml
+      run: pip install -r my-environment.yml
     - name: Exeute Notebook # Выполнение тетрадки Jupyter
       run: jupyter-nbconvert --execute DZ1.ipynb --to html
     - name: Upload a Build Artifact # Выгрузка вывода тетрадки (артефакта задания) в html файл
