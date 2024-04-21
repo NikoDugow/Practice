@@ -18,7 +18,7 @@ tqdm==4.64.0
 Jinja2==2.11.3
 numpy
 matplotlib
-sklearn
+scikit-learn
 ipykernel
 pandas
 seaborn
